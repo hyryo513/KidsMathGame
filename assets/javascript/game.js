@@ -48,6 +48,7 @@ var numberIncorrectAnswer = 0;
 
 //functions
 function initialization(){
+    clearStart();
     clearTime();
     clearQuestion();
     clearAnswer();
@@ -144,6 +145,10 @@ function clearAnswer(){
     $("#answer").html("");
 }
 
+function clearStart(){
+    $("#startUp").html("");
+}
+
 function showResult(){
     $("#result").append("<h3>All Done!</h3>");
     $("#result").append("<p>Correct Answers: " + numberCorrectAnswer + "</p>");
@@ -156,8 +161,6 @@ function showResult(){
 }
 
 //script starts
-initialization();
-
 $(document).on("click", ".answerBtn", function(){
     if(!answerClicked){
         stopTimer()
