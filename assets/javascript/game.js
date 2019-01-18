@@ -48,11 +48,11 @@ var numberIncorrectAnswer = 0;
 
 //functions
 function initialization(){
-    clearStart();
-    clearTime();
-    clearQuestion();
-    clearAnswer();
-    clearResult();
+    $("#time").empty();
+    $("#question").empty();
+    $("#answer").empty();
+    $("#result").empty();
+    $("#startUp").empty();
     totalQuiz = quizArray.length;
     numberCorrectAnswer = 0;
     numberIncorrectAnswer = 0;
@@ -129,26 +129,6 @@ function stopTimer(){
     intervalId = null;
 }
 
-function clearResult(){
-    $("#result").html("");
-}
-
-function clearTime(){
-    $("#time").html("");
-}
-
-function clearQuestion(){
-    $("#question").html("");
-}
-
-function clearAnswer(){
-    $("#answer").html("");
-}
-
-function clearStart(){
-    $("#startUp").html("");
-}
-
 function showResult(){
     $("#result").append("<h3>All Done!</h3>");
     $("#result").append("<p>Correct Answers: " + numberCorrectAnswer + "</p>");
@@ -192,14 +172,14 @@ $(document).on("click", ".nextBtn", function(){
     quizNumber++;
     timer();
     showAnswers();
-    clearResult();
+    $("#result").empty();
 });
 
 $(document).on("click", ".doneBtn", function(){
-    clearTime();
-    clearQuestion();
-    clearAnswer();
-    clearResult();
+    $("#time").empty();
+    $("#question").empty();
+    $("#answer").empty();
+    $("#result").empty();
     showResult();
 });
 
